@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body{
+            background-color: white;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 200px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+   </style>
+</head>
+<body>
+   <script>
+      function WarPerson(){
+               let warPerson = document.person.name.value; 
+            if (warPerson === null){
+               document.getElementById('result').innerHTML =  "Enter something"
+               }else if (warPerson == "Bogdan Hmelnyski") {
+               document.getElementById('result').innerHTML = 'Yes, you are right' ;
+               }else{
+                  document.getElementById('result').innerHTML = 'No! That is not right' ;
+               }
+}
+   </script>
+   <div>
+      <p>Who began the war of national liberation?</p>
+      <form name="person" action="javascript:WarPerson()">
+         year <input class="cqe" name="name" type="text" value="" size="100">
+         <button class="button" type="submit" name="submit" value="">Check</button>
+         <button class="button" type="reset" name="reset" value="">Again</button>
+      </form>
+      <p><span id="result"></span></p>
+   </div>
+</body>
+</html>

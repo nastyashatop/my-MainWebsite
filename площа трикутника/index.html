@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>perimeter of a rectangle</title>
+   <style>
+      body{
+            background-color: white;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 50px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+   </style>
+</head>
+<body>
+   
+</body>
+   <script>
+      function Squarep(){
+            let a=+document.squarep.a.value;
+            let b=+document.squarep.b.value;
+            let P =(a+b)*2;
+            let S=a*b;
+                    
+            let area=document.getElementById("area");
+            let perimeter=document.getElementById("perimeter");
+
+           
+              string=S;
+              string1=P;
+        area.innerHTML = string;
+        perimeter.innerHTML = string1;
+    }
+   </script>
+   <div>
+   <p>Calculating the area and perimeter of a rectangle</p>
+   <form name="squarep" action="javascript:Squarep()">
+   a <input class="cqe" name="a" type="text" value="" size="4">
+   b <input class="cqe" name="b" type="text" value="" size="4">
+   <button class="button" type="submit" value="">Calculate</button>
+   <button class="button" type="reset" name="reset" value="">Reset</button>
+   </form>
+   <p>Rectangle Area = <span id="area"></span> сm²</p>
+   <p>Rectangle perimeter = <span id="perimeter"></span> сm</p>
+   </div>
+</html>

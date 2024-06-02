@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      /*let userName = prompt('What is your name?','');
+      let letter1 = userName.charAt(0)
+      alert(letter1.toUpperCase()+userName.slice(1))*/
+      /*let userFind = prompt('Введіть щось','');
+      userFind=userFind.toLowerCase()
+      if(!!~userFind.indexOf("гарантія")||!!~userFind.indexOf("безкоштовно")){
+         alert('є');
+      }else{
+         alert('немає')
+      }*/
+     /* let str = prompt("Enter the row","бредуть бобри в сирі бори. бобри хоробрі, а для бобрят добрі ");
+let target = prompt("which subrow are you looking for?",'ри'); // мета пошуку
+let position = 0;
+// Довжину рядка визначати не будемо використовуємо нескінченний цикл з перериванням break вкінці рядка
+while (true) {
+  let searchPos = str.indexOf(target, position);
+  if (searchPos == -1) break; // якщо рядок закінчився
+
+  alert( 'знайшли '+target+ ' тут: ' + searchPos );
+  position = searchPos + 1; // продовжити пошук з наступного
+}*/
+   function analyzeNumber() {
+            let inputNumber = prompt("Enter an integer:").toString();
+            console.log(inputNumber)
+            if (!isNaN(inputNumber)) {
+                let digitsCount = inputNumber.length;
+                let digitsArray = inputNumber.split("");
+                console.log(digitsArray)
+                console.log(digitsCount)
+                alert(`Number of digits including: ${digitsCount}`);
+                alert(`Digits of the number: ${digitsArray.join(" ")}`);
+                
+                let sumOfDigits = digitsArray.reduce((acc, curr) => acc + parseInt(curr), 0);
+                alert(`The sum of digits including: ${sumOfDigits}`);
+                
+                let evenCount = 0;
+                let oddCount = 0;
+                digitsArray.forEach(digit => {
+                    if (parseInt(digit) % 2 === 0) {
+                        evenCount++;
+                    } else {
+                        oddCount++;
+                    }
+                });
+                alert(`Number of even digits: ${evenCount}`);
+                alert(`Number of odd numbers: ${oddCount}`);
+            } else {
+                alert("No number entered. Please try again.");
+            }
+        }
+        
+        analyzeNumber();
+   </script>
+</body>
+</html>

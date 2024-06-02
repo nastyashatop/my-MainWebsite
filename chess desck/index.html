@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шахівниця</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="chessboard" width="750" height="750"></canvas>
+
+    <script>
+        const canvas = document.getElementById('chessboard');
+        const ctx = canvas.getContext('2d');
+
+        const squareSize = 50;
+        const numRows = 15;
+        const numCols = 15;
+
+        function drawChessboard() {
+            for (let row = 0; row < numRows; row++) {
+                for (let col = 0; col < numCols; col++) {
+                    if ((row + col) % 2 === 0) {
+                        ctx.fillStyle = 'white';
+                    } else {
+                        ctx.fillStyle = 'black';
+                    }
+                    ctx.fillRect(col * squareSize, row * squareSize, squareSize, squareSize);
+                }
+            }
+        }
+
+        drawChessboard();
+    </script>
+</body>
+</html>

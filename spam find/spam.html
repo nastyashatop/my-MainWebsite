@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>spam-find</title>
+   <style type="text/css">
+      body{
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+      }
+    div{
+       font-size: 50px; 
+       color: black;
+       text-align: center;
+    }
+    .cqe{
+       width: 100px;
+       height: 50px;
+       font-size: 36px;
+       text-align: center;
+    }
+    .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+    .subtitle{
+      font-size: 24px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+ </style>
+</head>
+<body>
+	<script>
+function spamFind(){
+    let spam = document.spam.find.value
+if (~spam.indexOf("guarantee")||~spam.indexOf("free")){
+    document.getElementById('result').innerHTML =`there is a match! So there is Spam`
+}else{
+    document.getElementById('result').innerHTML =`safe, there are no matches with spam-words`
+}}
+	</script>
+	<div>
+<p>Finding the spam</p>
+<p class="subtitle">Spam-words are "guarantee" and "free"</p>
+<form name="spam" action="javascript:spamFind()">
+<input class="cqe" name="find" type="text" value="" size="15">
+<br>
+<button class="button" type="submit" value="">Find</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<span id="result"></span>
+</div>
+
+</body></html>

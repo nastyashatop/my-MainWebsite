@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Factorial</title>
+   <style>
+      body{
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         justify-content: center;
+      }
+      div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 100px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+         color: white;
+         background-color: rgb(38, 16, 73);
+         display: inline-block;
+         padding: 15px;
+         color: white;
+         border-radius: 15px;
+         font-size: 32px;
+         text-decoration: none;
+         margin-top: 30px;
+         margin-right: 20px;
+      }
+      .button:hover{
+         background-color: rgb(15, 2, 34);
+         text-decoration: underline;
+      }
+      .button:active{
+         background-color: rgb(52, 30, 84);
+      }
+   </style>
+</head>
+<body>
+   
+</body>
+<script>
+   function Factorial(){
+      let a= +document.factorial.a.value;
+      let answer= document.getElementById("Num")
+      let result=1;
+      for(let i=1; i<=a; i++){
+         result=i*result
+      }
+      document.getElementById('result').innerHTML = result;
+   }
+
+</script>
+<div>
+   <p>Enter the number, and i I will find it`s factorial</p>
+   <form name="factorial" action="javascript:Factorial()">
+   Your nuber: <input class="cqe" name="a" type="text" value="" size="5">
+   <br>
+   <button class="button" type="submit" name="submit" value="">Confirm</button>
+   <button class="button" type="reset" name="reset" value="">Reset</button>
+   </form>
+   <p><span id="result"></span></p>
+   </div>
+</html>

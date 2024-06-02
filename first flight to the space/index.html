@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>First flight into the space</title>
+	<style type="text/css">
+        body{
+            background-color: white;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 100px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+
+	</style>
+</head>
+<body>
+	<script>
+function SpaceYear() {
+        let spaceYear = +document.space.year.value; 
+        if (spaceYear === null){
+        document.getElementById('result').innerHTML =  "Type Anything"
+        }else if (spaceYear< 1961) {
+        document.getElementById('result').innerHTML = 'Oh no, that is too early!' ;
+        } else if (spaceYear > 1961) {
+        document.getElementById('result').innerHTML =   'no, many people were already flying at this time!' ; 
+        } else if(spaceYear == 1961) {
+        document.getElementById('result').innerHTML =  'Yes, your answer is correct!' ;
+        }else {
+        document.getElementById('result').innerHTML = "You didn't enter a number";
+        }
+    }    
+	</script>
+	<div>
+<p>In what year was the first flight into space?</p>
+<form name="space" action="javascript:SpaceYear()">
+year <input class="cqe" name="year" type="text" value="" size="10">
+<button class="button" type="submit" name="submit" value="">Check</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<p><span id="result"></span></p>
+</div>
+
+</body></html>

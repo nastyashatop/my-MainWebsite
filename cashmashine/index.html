@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="./style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cashmashine</title>
+   <style type="text/css">
+      body{
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+      }
+    div{
+       font-size: 50px; 
+       color: black;
+       text-align: center;
+    }
+    .subtitle{
+       margin-top: -30px;
+       margin-bottom: 70px;
+       font-size: 24px;
+       color: rgba(0, 0, 0, 0.7);
+       text-align: center;
+    }
+    .cqe{
+       width: 100px;
+       height: 50px;
+       font-size: 36px;
+       text-align: center;
+    }
+    .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+ </style>
+</head>
+<body>
+
+</body>
+<script>
+function cashmashine(){
+   let money = +document.cash.mashine.value;
+if (money < 50 || money > 3000) {
+   document.getElementById('result').innerHTML ="Unfortunately, you can withdraw money from UAH 50. up to 3000 hryvnias";
+}else if(money%50==0){
+   document.getElementById('result').innerHTML =`withdraw your ${money} hryvnias`;
+
+}else{
+   document.getElementById('result').innerHTML =`the ATM does not have such bills, so you can withdraw ${money-money%50} hryvnias! And I will take UAH ${money%50} as a commission, because you do not know how to count!`;
+}
+}
+</script>
+<div>
+   <p>How much money do u want yo withdraw?</p>
+   <p class="subtitle">
+      the minimum bill is UAH 50.</p>
+   <form name="cash" action="javascript:cashmashine()">
+   Withdraw: <input class="cqe" name="mashine" type="text" value="" size="10"> UAH
+   <br>
+   <button class="button" type="submit" name="submit" value="">Withdraw</button>
+   <button class="button" type="reset" name="reset" value="">Reset</button>
+   </form>
+   <p><span id="result"></span></p>
+</html>

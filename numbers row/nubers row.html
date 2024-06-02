@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>symbol-piramid</title>
+   <style type="text/css">
+      body{
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+      }
+    div{
+       font-size: 50px; 
+       color: black;
+       text-align: center;
+    }
+    .cqe{
+       width: 100px;
+       height: 50px;
+       font-size: 36px;
+       text-align: center;
+    }
+    .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+    .subtitle{
+      font-size: 24px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+ </style>
+</head>
+<body>
+	<script>
+function tringelRow(){
+        let sol = document.getElementById("qe_sol")
+        let emoj = document.qef.a.value
+        let emojKrok = emoj 
+        let typeUser =+ document.qef.b.value
+        let end = 0
+        let text = ''
+        while(typeUser > end){
+            text += emoj + "<br>"
+            emoj+=emojKrok
+            end++
+        }
+        string = `<br><p> ${text} </p>`
+        sol.innerHTML = string
+    }
+	</script>
+	<div>
+<p>Pyramid with sybols</p>
+<p class="subtitle">Enter the number of rows and number of sybols</p>
+<form name="qef" action="javascript:tringelRow()">
+Enter the symbol: <input class="cqe" name="a" type="text" value="" size="15">
+<br>
+Enter the number of symbols: <input class="cqe" name="b" type="text" value="" size="15">
+<br>
+<button class="button" type="submit" value="">Find</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<span id="qe_sol"></span>
+</div>
+
+</body></html>

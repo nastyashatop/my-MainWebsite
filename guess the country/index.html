@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Guess the country</title>
+   <style>
+      body{
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         justify-content: center;
+      }
+      div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 150px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+         color: white;
+         background-color: rgb(38, 16, 73);
+         display: inline-block;
+         padding: 15px;
+         color: white;
+         border-radius: 15px;
+         font-size: 32px;
+         text-decoration: none;
+         margin-top: 30px;
+         margin-right: 20px;
+      }
+      .button:hover{
+         background-color: rgb(15, 2, 34);
+         text-decoration: underline;
+      }
+      .button:active{
+         background-color: rgb(52, 30, 84);
+      }
+   </style>
+</head>
+<body>
+   
+</body>
+<script>
+      function Country(){
+      let country = document.countr.choise.value;
+      switch(country){
+         case "Ukraine":
+         case 'Poland':
+         case 'Italien':
+         case 'France':
+         case 'Spain':
+         case 'Sweden':
+         case 'Germany':
+         case 'Romania':
+         case 'Finland':
+         case 'UK':
+         case 'Greece':
+         case 'Bulgaria':
+         case 'Portugal':
+         case 'Hungary':
+         case 'Austria':
+         case 'Ireland':
+         case 'Norway':
+         case 'Switzerland':
+         case 'Netherlands':
+         case 'Moldova':
+         case 'Turkey':
+         case 'Georgia':
+         case 'Malta':
+         case 'Albania':
+
+         document.getElementById('result').innerHTML ="that is Europe";
+         break;
+
+         case 'Korea':
+         case 'China':    
+         case 'China':
+         case 'Japan':
+         case 'Indonesien':
+         case 'Kazakhstan':
+         case 'Iran':
+         case 'Saudi Arabia':
+         case 'Mongolia':
+         case 'Pakistan':
+         case 'Iraq':
+         case 'Uzbekistan':
+         case 'Thailand':
+         case 'Afghanistan':
+         case 'Vietnam':
+         case 'Malaysia':
+         case 'Oman':
+         case 'Philippines':
+         case 'Laos':
+         case 'Syria':
+         case 'Nepal':
+         case 'Kyrgyzstan':
+         case 'UAE':
+         case 'Israel':
+         case 'Palestine':
+            document.getElementById('result').innerHTML ='That is Asia';
+            break;
+
+         case 'USA':
+               case 'Kanada':
+                  case 'Mexico':
+                     case 'Guatemala':
+                        case 'Haiti':
+                           case 'Dominican Republic':
+                              case 'Cuba':
+                                 case 'Honduras':
+                                    case 'Nicaragua':
+                                       case 'El Salvador':
+                                          case 'Costa Rica':
+                                             case 'Jamaica':
+                                                case 'Bahamas':
+                                                   case 'Barbados':
+                                                   document.getElementById('result').innerHTML ='That is North America';
+                                                      break;
+         case 'Brazil':
+            case 'Colombia':
+               case 'Argentina':
+                  case 'Peru':
+                     case 'Venezuela':
+                        case 'Chilie':
+                           case 'Ecuador':
+                              case 'Bolivia':
+                                 case 'Paraguai':
+                                    case 'Uruguay':
+                                       case 'Guyana':
+                                          case 'Suriname':    
+                                          document.getElementById('result').innerHTML ='That is South America';
+                                           break;
+         case 'Australia':
+            case 'Papua New Guinea':
+               case 'New Zeland':
+                  case 'Fiji':
+                     case 'Solomon Islands':
+                        case 'Samoa':
+                           case 'Tonga':
+                              case 'Palau':
+                                 case 'Hawaii':
+                                    case 'French Polynesia':    
+                                    document.getElementById('result').innerHTML ='That is Oceanian';
+                                           break;
+                                           default:
+      document.getElementById('result').innerHTML ='Sorry, I don`t know abot this country';
+      }
+   }
+</script>
+<div>
+<p>Name the country</p>
+<form name="countr" action="javascript:Country()">
+Your country name: <input class="cqe" name="choise" type="text" value="" size="10">
+<br>
+<button class="button" type="submit" name="submit" value="">Confirm</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<p><span id="result"></span></p>
+</div>
+</html>

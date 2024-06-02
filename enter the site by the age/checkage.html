@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Access to the site by age</title>
+	<style type="text/css">
+        body{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+      .subtitle{
+         margin-top: -30px;
+         margin-bottom: 70px;
+         font-size: 24px;
+         color: rgba(0, 0, 0, 0.7);
+			text-align: center;
+      }
+		.cqe{
+			width: 100px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+         color: white;
+         background-color: rgb(38, 16, 73);
+         display: inline-block;
+         padding: 15px;
+         color: white;
+         border-radius: 15px;
+         font-size: 32px;
+         text-decoration: none;
+         margin-top: 30px;
+         margin-right: 20px;
+      }
+      .button:hover{
+         background-color: rgb(15, 2, 34);
+         text-decoration: underline;
+      }
+      .button:active{
+         background-color: rgb(52, 30, 84);
+      }
+	</style>
+</head>
+<body>   
+	<script>
+function AgeAcept() {
+  let age  = + document.age.acept.value; 
+  if (age >= 18 && age <= 100){
+    document.getElementById('result').innerHTML ="Welcome to my website!";
+    }
+    else {
+        document.getElementById('result').innerHTML ='You are not allowed to enter'
+    }
+        }    
+	</script>
+	<div>
+<p>Enter your age</p>
+<p class="subtitle">You are only allowed to entry if you are already 18 and younger than 100</p>
+<form name="age" action="javascript:AgeAcept()">
+Your age is <input class="cqe" name="acept" type="text" value="" size="10">
+<br>
+<button class="button" type="submit" name="submit" value="">Confirm</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<p><span id="result"></span></p>
+</div>
+
+</body></html>

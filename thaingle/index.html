@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      canvas {
+          border: 1px solid black;
+      }
+  </style>
+</head>
+<body>
+   <canvas id="shapesCanvas" width="400" height="400"></canvas>
+<script>
+    const canvas = document.getElementById('shapesCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const numShapes = 10;
+
+    function drawRandomTriangles() {
+        for (let i = 0; i < numShapes; i++) {
+            const x1 = Math.random() * canvas.width;
+            const y1 = Math.random() * canvas.height;
+            const x2 = Math.random() * canvas.width;
+            const y2 = Math.random() * canvas.height;
+            const x3 = Math.random() * canvas.width;
+            const y3 = Math.random() * canvas.height;
+            const color = getRandomColor();
+            
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.closePath();
+            
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 18)];
+        }
+        return color;
+    }
+
+    drawRandomTriangles();
+    /*
+let c = document.getElementById("myCanvas");
+let cxt = c.getContext("2d");
+cxt.fillStyle ="#ff0000";
+cxt.fillRect(0, 0, 150, 75); 
+
+cxt.strokeStyle = "red";
+            cxt.setLineDash([15,5]);
+            cxt.strokeRect(40, 40, 100, 100);
+            cxt.strokeStyle = "blue";
+            cxt.setLineDash([2,5,6]);
+            cxt.strokeRect(180, 40, 100, 100);
+            cxt.strokeStyle = "green";
+            cxt.setLineDash([2,2]);
+            cxt.strokeRect(320, 40, 100, 100);
+
+            cxt.strokeStyle = "red";
+            cxt.fillStyle = "blue";
+            cxt.lineWidth = 15;
+            cxt.lineJoin = "miter";
+            cxt.strokeRect(40, 40, 100, 100);
+            cxt.lineJoin = "bevel";
+            cxt.strokeRect(180, 40, 100, 100);
+            cxt.lineJoin = "round";
+            cxt.strokeRect(320, 40, 100, 100);
+
+            cxt.globalAlpha = 0.5;
+
+            globalAlpha
+
+            cxt.beginPath();                           
+cxt.moveTo(50, 50);                        
+cxt.lineTo(500, 50);                       
+cxt.lineWidth = 15;        
+cxt.strokeStyle = "#ff0000";  
+cxt.lineCap = "butt";                      
+cxt.stroke();                              
+                                                
+cxt.beginPath();                           
+cxt.moveTo(50, 100);                       
+cxt.lineTo(500, 100);                      
+cxt.lineWidth = 15;                        
+cxt.strokeStyle = "#00ff00";               
+cxt.lineCap = "round";                     
+cxt.stroke();                              
+                                                
+cxt.beginPath();                           
+cxt.moveTo(50, 150);                       
+cxt.lineTo(500, 150);                      
+cxt.lineWidth = 15;                        
+cxt.strokeStyle = "#0000ff";               
+cxt.lineCap = "square";                    
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(75,250); 
+cxt.lineTo(250,100); 
+cxt.lineTo(250,400); 
+cxt.fillStyle="red";
+cxt.fill();
+
+cxt.lineWidth = 15;                        
+cxt.strokeStyle = "#00ff00";               
+cxt.lineCap = "round";                     
+cxt.stroke(); 
+
+cxt.beginPath();
+cxt.moveTo(75,250); 
+cxt.lineTo(250,100); 
+cxt.lineTo(250,400); 
+cxt.fillStyle="red";
+cxt.fill(); 
+cxt.beginPath();
+cxt.moveTo(75,250); 
+cxt.lineTo(250,100); 
+cxt.lineTo(250,400);
+cxt.lineTo(75,250);
+cxt.lineWidth = 15;                        
+cxt.strokeStyle = "#00ff00";               
+cxt.lineCap = "round";                     
+cxt.stroke(); 
+
+cxt.beginPath();
+cxt.arc(100, 100, 50, 0, Math.PI*2, false); 
+cxt.closePath(); 
+cxt.fillStyle="red";
+cxt.fill();
+
+let cxt = canvas.getContext("2d");                            
+let x = canvas.width / 2;                                         
+let y = canvas.height / 2;                                        
+let radius = 75;                                                  
+let startAngle = 1.1 * Math.PI;                                   
+let endAngle = 1.9 * Math.PI;                                     
+let counterClockwise = false;                                     
+                                                                   
+cxt.beginPath();                                              
+cxt.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+cxt.lineWidth = 15;                                           
+                                                  
+cxt.strokeStyle = "black";                                    
+cxt.stroke();
+
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");                            
+let x = canvas.width / 2;                                         
+let  y = canvas.height / 2;                                        
+let radius = 75;                                                  
+let startAngle = 1 * Math.PI;                                   
+let endAngle = 2 * Math.PI;                                     
+let counterClockwise = true;                                     
+                                                                   
+context.beginPath();                                              
+context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+context.lineWidth = 10;                                           
+                                                
+context.strokeStyle = "red";                                    
+context.stroke();
+
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");                            
+let x = canvas.width / 2;                                         
+let  y = canvas.height / 2;                                        
+let radius = 75;                                                  
+let startAngle = 0 * Math.PI;                                   
+let endAngle = 2 * Math.PI;                                     
+let counterClockwise = true;  
+context.lineWidth = 10;
+for(let i=0;i<100;i++){ 
+    let radius = Math.random()*75;
+    let x =Math.floor( Math.random()*canvas.width)                                         
+let  y = Math.floor( Math.random()*canvas.height);                                                                           
+context.beginPath();                                              
+context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+context.strokeStyle = "red";                                    
+context.stroke();
+}
+*/
+</script>
+</body>
+</html>

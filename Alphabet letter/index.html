@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>alphabet</title>
+   <style type="text/css">
+      body{
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+      }
+    div{
+       font-size: 50px; 
+       color: black;
+       text-align: center;
+    }
+    .subtitle{
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 24px;
+    }
+    .cqe{
+       width: 100px;
+       height: 50px;
+       font-size: 36px;
+       text-align: center;
+    }
+    .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+
+ </style>
+</head>
+<body>
+</body>
+<script>
+   function alphabet(){
+    function alphabet() {
+    let letter = document.alphabet.letter.value;
+    let position = 0;
+    let alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","w","v","x","y","z"];
+    let SP = (alphabet.indexOf(letter, position)+1)
+    if (SP > 0){
+        document.getElementById('result').innerHTML =`Number of letter "${letter}" is ${SP}`
+}else {
+    document.getElementById('result').innerHTML ="Letter is not finded"
+}
+}
+alphabet()
+    }
+
+</script>
+<div>
+   <p>Enter the letter</p>
+   <p class="subtitle">I am going to tell you the number of this letter</p>
+   <form name="alphabet" action="javascript:alphabet()">
+   your letter: <input class="cqe" name="letter" type="text" value="" size="10">
+   <br>
+   <button class="button" type="submit" name="submit" value="">Confirm</button>
+   <button class="button" type="reset" name="reset" value="">Reset</button>
+   </form>
+   <p><span id="result"></span></p>
+   </div>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Compliments</title>
+	<style type="text/css">
+      body{
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+      }
+    div{
+       font-size: 50px; 
+       color: black;
+       text-align: center;
+    }
+    .cqe{
+       width: 100px;
+       height: 50px;
+       font-size: 36px;
+       text-align: center;
+    }
+    .button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+
+ </style>
+</head>
+<body>
+    <script>
+        function Compliments(){
+       let compliments=["smart", "kind", "clever", "polite", "cute", "sweet", "preety", "good", "friendly", "kind-heart","beautiful","agreeble","patient","responsible","good-natured"];
+let animals=["hamster", "giraffe","snake","tiger","lion", "cat","dog","parrot","rabbit","turtle","jelly-fish","horse","shark","panda","frog","wolf","elethant","snake","scorpio","wolf","fox"];
+let colors=["red","green","yellow", "gold","blueviolet","cyan","aquamarine","fuchsia","darkblue","coral","cornflowerblue", "indigo","blue","grey","pink","orange","violet","chartreuse"];
+
+let number= +document.compliments.number.value;
+let answer=document.getElementById("answer");
+let string='';
+       for (i = 1; i <= number; i++){
+           let randCompliments=Math.floor(Math.random()*colors.length)
+           let randColors=Math.floor(Math.random()*compliments.length)
+           let randAnimals=Math.floor(Math.random()*animals.length)
+           
+
+          string+=`<p style='color:${colors[randColors]}'>${i} ) You are so ${compliments[randCompliments]} as ${animals[randAnimals]}! </p>`;
+      } 
+       answer.innerHTML = string;}
+   </script>
+   <div>
+           <P>Enter the number of compliments that you want to resive</P>
+           <form name="compliments" action="javascript:Compliments()">
+               <input class="cqe" name="number" type="text" value="" size="4"></input>
+               <button class="button" type="submit" value="Submit">Submit</button>
+               <button class="button" type="reset" name="reset" value="Reset">Reset</button>
+           </form>
+            <span id="answer"></span>
+</div>
+</body></html>

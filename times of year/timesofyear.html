@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Times of year</title>
+	<style type="text/css">
+        body{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 100px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+      .button{
+         color: white;
+         background-color: rgb(38, 16, 73);
+         display: inline-block;
+         padding: 15px;
+         color: white;
+         border-radius: 15px;
+         font-size: 32px;
+         text-decoration: none;
+         margin-top: 30px;
+         margin-right: 20px;
+      }
+      .button:hover{
+         background-color: rgb(15, 2, 34);
+         text-decoration: underline;
+      }
+      .button:active{
+         background-color: rgb(52, 30, 84);
+      }
+
+	</style>
+</head>
+<body>   
+	<script>
+function Month() {
+    let userMonth = + document.month.number.value;
+    switch(userMonth){
+        case 12:
+        case 1:
+        case 2:
+        
+        document.getElementById('result').innerHTML ="that is winter";
+        break;
+        case 3:
+        case 4:
+        case 5:
+        
+        document.getElementById('result').innerHTML ="that is spring";
+        break;
+        case 6:
+        case 7:
+        case 8:
+        
+        document.getElementById('result').innerHTML ="that is summer";
+        break;
+        case 9:
+        case 10:
+        case 11:
+        
+        document.getElementById('result').innerHTML ="that is autumn";
+        break;
+        default:
+        document.getElementById('result').innerHTML ="You have entered the wrong number";
+    }}
+	</script>
+	<div>
+<p>Enter the number of month</p>
+<form name="month" action="javascript:Month()">
+month number: <input class="cqe" name="number" type="text" value="" size="10">
+<br>
+<button class="button" type="submit" name="submit" value="">Confirm</button>
+<button class="button" type="reset" name="reset" value="">Reset</button>
+</form>
+<p><span id="result"></span></p>
+</div>
+
+</body></html>

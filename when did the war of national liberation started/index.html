@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="./style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body{
+            background-color: white;
+        }
+		div{
+			font-size: 50px; 
+			color: black;
+			text-align: center;
+		}
+		.cqe{
+			width: 100px;
+			height: 50px;
+			font-size: 36px;
+			text-align: center;
+		}
+/* CSS */
+.button{
+       color: white;
+       background-color: rgb(38, 16, 73);
+       display: inline-block;
+       padding: 15px;
+       color: white;
+       border-radius: 15px;
+       font-size: 32px;
+       text-decoration: none;
+       margin-top: 30px;
+       margin-right: 20px;
+    }
+    .button:hover{
+       background-color: rgb(15, 2, 34);
+       text-decoration: underline;
+    }
+    .button:active{
+       background-color: rgb(52, 30, 84);
+    }
+   </style>
+</head>
+<body>
+   <script>
+      function WarYear(){
+      let warYear = +document.war.year.value; 
+    if (warYear === null){
+        document.getElementById('result').innerHTML =  "Enter something"
+        }else if (warYear< 1648) {
+        document.getElementById('result').innerHTML = 'No! That is too early' ;
+        } else if (warYear > 1648) {
+        document.getElementById('result').innerHTML =   'No that is too late' ; 
+        } else if(warYear == 1648) {
+        document.getElementById('result').innerHTML =  'Yes! That is right' ;
+        }else {
+        document.getElementById('result').innerHTML = "You have entered not the number";
+        }
+}
+      </script>
+      <div>
+         <p>When the war of national liberation began?</p>
+         <form name="war" action="javascript:WarYear()">
+            year <input class="cqe" name="year" type="text" value="" size="10">
+            <button class="button" type="submit" name="submit" value="">Check</button>
+            <button class="button" type="reset" name="reset" value="">Again</button>
+         </form>
+         <p><span id="result"></span></p>
+      </div>
+</body>
+</html>
